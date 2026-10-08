@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vote-app
+  name: platform
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/pratik-khot/test-repo-gitops.git
     targetRevision: main
-    path: apps/vote-app/dev
+    path: Platform/argocd
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true

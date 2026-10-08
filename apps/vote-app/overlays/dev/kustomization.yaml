@@ -4,5 +4,9 @@ namespace: vote-app-dev
 resources:
   - ../../base
 replicas:
-  - name: vote
-    count: 1
+- name: vote
+  count: 2
+- name: worker
+  count: 2
+- name: result
+  count: 2
