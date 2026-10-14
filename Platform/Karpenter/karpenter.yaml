@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: karpenter
+  namespace: kube-system
+spec:
+  project: default
+  source:
+    repoURL: oci://public.ecr.aws/karpenter
+    chart: karpenter
+    targetRevision: 1.8.1
+    helm:
+      values: |
+        settings:
+          clusterName: "myapp-eks"
+          interruptionQueue: "myapp-eks-karpenter-interruption-queue"
+          enableZonalShift: "false"
+        serviceAccount:
+          annotations:
+            eks.amazonaws.com/role-arn: "arn:aws:iam::216545191382:role/myapp-eks-karpenter-controller-role"
+
+        controller:
+          resources:
+            limits:
+              cpu: "1"
+              memory: "1Gi"
+            requests:
+              cpu: "1"
+              memory: "1Gi"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
