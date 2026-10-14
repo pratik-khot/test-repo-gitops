@@ -4,4 +4,4 @@ resources:
   - EC2NodeClass.yaml
   - karpenter.yaml
   - NodepoolOD.yaml
-  - NodepoolSpot.yaml
+  - NodePoolSpot.yaml
