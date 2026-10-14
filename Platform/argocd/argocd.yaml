@@ -13,7 +13,7 @@ spec:
     values: |
       configs:
         params:
-          server.insecure: true
+          server.insecure: "true"
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
