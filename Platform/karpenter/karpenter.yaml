@@ -17,7 +17,7 @@ spec:
           enableZonalShift: "false"
         serviceAccount:
           annotations:
-            eks.amazonaws.com/role-arn: "arn:aws:iam::216545191382:role/myapp-eks-karpenter-controller-role"
+            eks.amazonaws.com/role-arn: "arn:aws:iam::727158409638:role/myapp-eks-karpenter-controller-role"
 
         controller:
           resources:

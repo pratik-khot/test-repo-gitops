@@ -17,7 +17,7 @@ spec:
 
         region: us-east-1
 
-        vpcId: vpc-0438189537557fc9b
+        vpcId: vpc-0ffdf4e7bb16d8ab0
 
         serviceAccount:
           create: true
